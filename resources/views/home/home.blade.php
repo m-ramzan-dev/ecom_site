@@ -2219,7 +2219,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/man/polo-shirt-4.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/man/polo-shirt-4.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
@@ -2247,7 +2248,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/women/girl-1.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/women/girl-1.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
@@ -2285,7 +2287,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/man/polo-shirt-2.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/man/polo-shirt-2.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
@@ -2313,7 +2316,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/women/girl-2.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/women/girl-2.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
@@ -2341,7 +2345,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/man/t-shirt-1.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/man/t-shirt-1.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                             </figure>
@@ -2368,7 +2373,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/women/girl-3.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/women/girl-3.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
@@ -2395,7 +2401,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/man/polo-shirt-1.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/man/polo-shirt-1.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
@@ -2421,7 +2428,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/women/girl-4.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/women/girl-4.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
@@ -2450,7 +2458,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/man/polo-shirt-4.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/man/polo-shirt-4.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
@@ -2478,7 +2487,8 @@
                                         <li>
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img
-                                                        src="img/women/girl-1.png" alt="polo shirt img" /></a>
+                                                        src="{{ asset('home_assets/img/women/girl-1.png') }}"
+                                                        alt="polo shirt img" /></a>
                                                 <a class="aa-add-card-btn" href="#"><span
                                                         class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
