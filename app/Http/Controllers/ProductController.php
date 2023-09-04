@@ -31,6 +31,7 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|unique:products,name',
             //'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
@@ -50,10 +51,10 @@ class ProductController extends Controller
         }
         $image_name = "";
         if ($request->hasFile('image')) {
-            $image  = $request->file('image');
-            $ext = $image->extension();
-            $image_name = time() . '' . $ext;
-            $image->storeAs('public/media', $image_name);
+            //$image  = $request->file('image');
+            //$ext = $image->extension();
+            //$image_name = time() . '' . $ext;
+            //$image->storeAs('public/media', $image_name);
         }
         $pid = Product::insertGetId([
             "name" => $request->name,
