@@ -20,6 +20,7 @@ class Category extends Authenticatable
     protected $fillable = [
         'name',
         'status',
+        'image'
 
     ];
 

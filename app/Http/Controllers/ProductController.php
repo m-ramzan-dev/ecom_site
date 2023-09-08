@@ -32,9 +32,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|unique:products,name',
-            //'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
             'category_id' => 'required',
             'brand' => 'required',
             'model' => 'required',
@@ -51,10 +51,10 @@ class ProductController extends Controller
         }
         $image_name = "";
         if ($request->hasFile('image')) {
-            //$image  = $request->file('image');
-            //$ext = $image->extension();
-            //$image_name = time() . '' . $ext;
-            //$image->storeAs('public/media', $image_name);
+            // $image = $request->file('image');
+            // $ext = $image->extension();
+            // $image_name = time() . '.' . $ext;
+            // $image->move(public_path('images/'), $image_name);
         }
         $pid = Product::insertGetId([
             "name" => $request->name,
@@ -72,10 +72,10 @@ class ProductController extends Controller
         foreach ($request['sku'] as $key => $value) {
             $attribute_image = "";
             if (isset($request["attribute_image"][$key])) {
-                $image  = $request->file($request["attribute_image"][$key]);
-                $ext = $image->extension();
-                $attribute_image = time() . '' . $ext;
-                $image->storeAs('public/media', $attribute_image);
+                // $image = $request->file($request["attribute_image"][$key]);
+                // $ext = $image->extension();
+                // $attribute_image = time() . '.' . $ext;
+                // $image->move(public_path('images/'), $attribute_image);
             }
             ProductAttribute::insert([
                 "product_id" => $pid,
@@ -121,7 +121,7 @@ class ProductController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
+
             'category_id' => 'required',
             'brand' => 'required',
             'model' => 'required',
@@ -142,7 +142,14 @@ class ProductController extends Controller
             $request->session()->flash('error', 'Product with same name exits.');
             return redirect('admin/product/edit/' . $request->id);
         }
-        //category_id
+        $image_name = "";
+        if ($request->hasFile('image')) {
+
+            $image = $request->file('image');
+            $ext = $image->extension();
+            $image_name = time() . '.' . $ext;
+            $image->move(public_path('images/'), $image_name);
+        }
 
         if ($product) {
             $product['name'] = $request['name'];
@@ -155,6 +162,8 @@ class ProductController extends Controller
             $product['status'] = $request['status'];
             $product['warranty'] = $request['warranty'];
             $product['description'] = $request['description'];
+            $product['image'] = $image_name;
+
             $product->save();
             $request->session()->flash('message', $request['name'] . 'updated successfully.');
             return redirect('admin/product');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -23,15 +24,37 @@ class CategoryController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'cat_name' => 'required|unique:categories,name',
-            'cat_status' => 'required'
+            'cat_status' => 'required',
+            //'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+        //$fileName = time() . '.' . $request->image->extension();
+        //$request->image->storeAs('public/images', $fileName);
+
         if ($validator->fails()) {
             $request->session()->flash('error', $validator->errors()->first());
             return redirect('admin/category/add');
         }
+
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $originalFileName = $image->getClientOriginalName();
+        //     $fileName = str_replace(' ', '_', $originalFileName);
+        //     $image->move(public_path('user/images/'), $fileName);
+        //     $fileName = 'user/images/' . $fileName;
+        // }
+        $image_name = "";
+        if ($request->hasFile('image')) {
+
+            $image = $request->file('image');
+            $ext = $image->extension();
+            $image_name = time() . '.' . $ext;
+            $image->move(public_path('images/'), $image_name);
+        }
+
         Category::insert([
             "name" => $request->cat_name,
             "status" => $request->cat_status,
+            "image" => $image_name
         ]);
         $request->session()->flash('message', 'Category added successfully.');
         return redirect('admin/category');
